@@ -1,0 +1,306 @@
+﻿<!--
+// Azure-70-532-Practice-Test  http://github.com/crpietschmann/Azure-70-533-Practice-Test
+// Copyright (c) 2016 Chris Pietschmann http://pietschsoft.com
+// Licensed under MIT License https://github.com/crpietschmann/Azure-70-533-Practice-Test/blob/master/LICENSE
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Implementing Microsoft Azure Infrastructure Solutions (70-533) Practice Test</title>
+
+    <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/bootstrap/3.3.4/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/jsQuizEngine.css">
+    <link rel="stylesheet" type="text/css" href="css/site.css">
+
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/bootstrap/3.3.4/bootstrap.min.js"></script>
+    <script src="js/jsQuizEngine.js"></script>
+    <script>
+        var quizEngine = null;
+        $(function () {
+            var selectedQuiz = location.href;
+			
+			if (selectedQuiz.indexOf('?') > -1) {
+			    selectedQuiz = selectedQuiz.substr(selectedQuiz.indexOf('?') + 1);
+				if (selectedQuiz.indexOf('#') > -1) {
+					selectedQuiz = selectedQuiz.substr(0, selectedQuiz.indexOf('#'));
+				}
+			} else {
+				selectedQuiz = null;
+			}
+
+			if (selectedQuiz !== null) {
+			    // fix referrals from Twitter and other services
+			    if (isNaN(+selectedQuiz.substr(0, 1))) {
+			        document.location = '?';
+			    }
+			}
+
+			if (selectedQuiz) {
+			    $('#titleScreen').hide();
+			    $('#jsQuizEngine').show();
+			    quizEngine = jsQuizEngine($('#jsQuizEngine'), { quizUrl: 'quiz/Azure_70-533_Objective_' + selectedQuiz + '.htm' });
+			} else {
+			    $('#titleScreen').show();
+			    $('#jsQuizEngine, #navbar-intest').hide();
+			}
+        });
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="?">Implementing Azure Infrastructure Solutions (70-533) Practice Test</a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul id="navbar-intest" class="nav navbar-nav">
+                    <li><a href="#" onclick="location.reload()">Reset Test</a></li>
+                    <li><a href="?">Back to Objectives</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right social-nav">
+                    <li>
+                        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://crpietschmann.github.io/Azure-70-533-Practice-Test/" data-via="crpietschmann">Tweet</a>
+                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="container">
+
+        <div id="titleScreen">
+            <div class="jumbotron">
+                <h1>Implementing Microsoft Azure Infrastructure Solutions (70-533) Practice Test</h1>
+                <p>
+                    This is a set of practice tests designed to provide assistance when studying for the Microsoft certification <a href="https://www.microsoft.com/learning/en-us/exam-70-533.aspx">Implementing Microsoft Azure Infrastructure Solutions (70-533)</a> exam.
+                </p>
+            </div>
+
+            <h2>Choose practice test to take:</h2>
+            <div id="objaccordian" class="panel-group" role="tablist" aria-multiselectable="true">
+                
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingObj1">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseObj1" aria-expanded="true" aria-controls="collapseObj1">
+                                Implement Web Apps (15-20%)
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseObj1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingObj1">
+                        <div class="panel-body">
+                            <p>
+                                Deploy Web Apps<br>
+                                Define deployment slots; rollback deployments, configure and deploy packages, deploy web jobs, schedule web jobs
+                            </p>
+                            <p>
+                                Configure Web Apps<br>
+                                Configure app settings, connection strings, handlers, and virtual directories;
+                                configure certicates, custom domains, and traffic manager; configure SSL bindings and runtime configurations; manage Web Apps by using Azure PowerShell and Xplat-CLI
+                            </p>
+                            <p>
+                                Configure diagnostics, monitoring, and analytics<br>
+                                Retrieve diagnostics data; view straming logs; configure endpoint monitoring, alerts, and diagnostics; monitor website resources
+                            </p>
+                            <p>
+                                Configure scale and resilience<br>
+                                Configure auto-scale using built-in and custom schedules; configure by metric; change the size of an instance
+                            </p>
+                            <p>
+                                Manage App Service plans<br>
+                                Create App Service plans; migrate Web Apps between App Service plans; create a Web App within an App Service plan
+                            </p>
+                        </div>
+                    </div>
+                </div>
+               
+               <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingObj2">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseObj2" aria-expanded="true" aria-controls="collapseObj2">
+                                Implement virtual machines (15-20%)
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseObj2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingObj2">
+                        <div class="panel-body">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingObj3">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseObj3" aria-expanded="true" aria-controls="collapseObj3">
+                                Implement cloud services (15-20%)
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseObj3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingObj3">
+                        <div class="panel-body">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingObj4">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseObj4" aria-expanded="true" aria-controls="collapseObj4">
+                                Implement storage (15-20%)
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseObj4" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingObj4">
+                        <div class="panel-body">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingObj5">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseObj5" aria-expanded="true" aria-controls="collapseObj5">
+                                Implement an Azure Active Directory (15-20%)
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseObj5" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingObj5">
+                        <div class="panel-body">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingObj6">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseObj6" aria-expanded="true" aria-controls="collapseObj6">
+                                Implement virtual networks (15-20%)
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseObj6" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingObj6">
+                        <div class="panel-body">
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <p><small><em>Note: In an effort to allow you to target your studies to specific exam objectives, the practice tests are broken out into each sub-objective having it's own individual practice test.</em></small></p>
+
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <div class="caption">
+                            <h3>Free Video Training</h3>
+                            <p>Microsoft Virtual Academy is an excellent source of Free video training on Microsoft Azure.</p>
+                            <p><a href="http://www.microsoftvirtualacademy.com/product-training/microsoft-azure" target="_blank" role="button" class="btn btn-primary">Watch Videos</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <div class="caption">
+                            <h3>Free eBooks</h3>
+                            <p>Microsoft Virtual Academy and Microsoft Press have a bunch of Free eBooks available.</p>
+                            <p><a href="http://www.microsoftvirtualacademy.com/ebooks#azure" target="_blank" role="button" class="btn btn-primary">Download eBooks</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <div class="caption">
+                            <h3>Azure Documentation</h3>
+                            <p>The Microsoft Azure Documenation contains tons of articles covering everything.</p>
+                            <p><a href="http://azure.microsoft.com/en-us/documentation/" target="_blank" role="button" class="btn btn-primary">Read Documentation</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <div class="caption">
+                            <h3>Are you ready to get Certified?</h3>
+                            <p>If you've mastered these practice tests, then you might be ready for the real thing.</p>
+                            <p><a href="https://www.microsoft.com/learning/en-us/exam-70-533.aspx" target="_blank" role="button" class="btn btn-primary">Schedule Exam</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <div class="caption">
+                            <h3>Free 1-month Azure Trial</h3>
+                            <p>Sign up for Free and get $220 to spend on all Azure services</p>
+                            <p><a href="http://azure.microsoft.com/en-us/pricing/free-trial/" target="_blank" role="button" class="btn btn-primary">Start Trial</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <div class="caption">
+                            <h3>Want to help write questions?</h3>
+                            <p>If you want to contribute to this project, please submit a Pull Request.</p>
+                            <a href="https://github.com/crpietschmann/Azure-70-533-Practice-Test" target="_blank"><img src="images/github-logo.png" style="float: right; width: 2em;" /></a>
+                            <p><a href="https://github.com/crpietschmann/Azure-70-533-Practice-Test/pulls" target="_blank" role="button" class="btn btn-primary">Submit Pull Request</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+
+        <div id="jsQuizEngine">
+            <section id="title" data-bind="visible: !quizStarted()">
+                <div class="jumbotron">
+                    <h1 data-bind="text: quizTitle"></h1>
+                    <h2 data-bind="text: quizSubTitle"></h2>
+                    <p><button class="btn btn-primary btn-lg" data-bind="click: startQuiz">Start Practice Test</button></p>
+                </div>
+            </section>
+            <section class="quiz" data-bind="visible: quizStarted() && !quizComplete()">
+                <h5 data-bind="text: quizTitle"></h5>
+                <h3 data-bind="text: quizSubTitle"></h3>
+                <div>Question <span data-bind="text: currentQuestionIndex"></span> of <span data-bind="text: questionCount"></span></div>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-bind="attr: { 'aria-valuenow': currentProgress }, style: { width: currentProgress() + '%' }"></div>
+                </div>
+                <div class="question-pool"></div>
+                <button class="btn btn-default" data-bind="click: movePreviousQuestion, disable: currentQuestionIsFirst">Previous</button>
+                <button class="btn btn-default" data-bind="click: showCurrentQuestionAnswer">Show Answer</button>
+                <button class="btn btn-primary" data-bind="click: moveNextQuestion, disable: currentQuestionIsLast, visible: !currentQuestionIsLast()">Next</button>
+                <button class="btn btn-primary" data-bind="click: calculateScore, visible: currentQuestionIsLast">Calculate Score</button>
+            </section>
+            <section class="score" data-bind="visible: quizComplete">
+                <h5 data-bind="text: quizTitle"></h5>
+                <h3 data-bind="text: quizSubTitle"></h3>
+                <p>Test Results:</p>
+                <div>Questions: <span data-bind="text: questionCount"></span></div>
+                <div>Date: <span data-bind="text: calculatedScoreDate"></span></div>
+                <div>Overall Score: <span data-bind="text: calculatedScore"></span>%</div>
+                <div>Correct Questions: <span data-bind="text: totalQuestionsCorrect"></span></div>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-bind="attr: { 'aria-valuenow': calculatedScore }, style: { width: calculatedScore() + '%' }, css: { 'progress-bar-success': quizPassed, 'progress-bar-danger': !quizPassed() }"></div>
+                </div>
+                <div class="pass-indicator">
+                    <h1 data-bind="css: { 'text-success': quizPassed, 'text-danger': !quizPassed() }">
+                        <span data-bind="visible: quizPassed">PASS</span>
+                        <span data-bind="visible: !quizPassed()">FAIL</span>
+                    </h1>
+                </div>
+            </section>
+        </div>
+    </section>
+    <footer class="container">
+		<p>The full source code and questions for this project is available at: <a href="http://github.com/crpietschmann/Azure-70-533-Practice-Test">http://github.com/crpietschmann/Azure-70-533-Practice-Test</a></p>
+		<p>Powered by <a href="https://github.com/crpietschmann/jsQuizEngine">jsQuizEngine</a> by <a href="http://buildazure.com">Chris Pietschmann</a></p>
+        <p><small>Disclaimer: This project is not affiliated with Microsoft. All trademarks for Microsoft, Azure, etc are owned by Microsoft.</small></p>
+    </footer>
+</body>
+</html>
