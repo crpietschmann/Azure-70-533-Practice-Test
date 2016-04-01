@@ -1,6 +1,16 @@
 <section class="quiz" data-title="Implement Web Apps" data-subtitle="Objective 1.1: Deploy Web Apps">
     <section class="question">
         <section class="text">
+            When creating an Azure Web App named "acme", what is the domain name that Azure automatically provisions for it?
+        </section>
+        <section class="answer">Must be done manually</section>
+        <section class="answer" data-correct>acme.azurewebsites.net</section>
+        <section class="answer">acme.azurewebapps.net</section>
+        <section class="answer">acme.websites.azure.net</section>
+        <section class="answer">acme.webapps.azure.net</section>
+    </section>
+    <section class="question">
+        <section class="text">
             In addition to the Production deployment slot, how many additional deployment slots can you create?
         </section>
         <section class="answer">1</section>
@@ -12,5 +22,103 @@
 			You can add additional deployment slots for a total of 5 deployment slots that can be swapped with the production slot, or other non-production slots. The 4 additional slots can be used for staging and testing purposes.
 		</section>
     </section>
-    
+    <section class="question">
+        <section class="text">
+            What Mode does a Web App need to be in to configure additional Deployment Slots?
+        </section>
+        <section class="answer">Free</section>
+        <section class="answer" data-correct>Standard</section>
+        <section class="description"></section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Which Azure PowerShell command is used to create a new Azure Web App Deployment Stlot?
+        </section>
+        <section class="answer">New-AzureWebsiteSlot -Location $loc -Name $name</section>
+        <section class="answer">New-AzureWebsiteSlot -Location $loc -Name $name -Slot $slot</section>
+        <section class="answer" data-correct>
+            New-AzureWebsite -Location $loc -Name $name -Slot $slot
+        </section>
+        <section class="answer">New-AzureWebsite -Location $loc -Name $name</section>
+    </section>
+    <section class="question">
+        <section class="text">
+            When creating a new Web App named "acme", what is the domain name Azure automatically provisions for it?
+        </section>
+        <section class="answer" data-correct>acme.azurewebsites.net</section>
+        <section class="answer">acme.azurewebapps.net</section>
+        <section class="answer">acme.webapps.azure.net</section>
+        <section class="answer">acme.websites.azure.net</section>
+    </section>
+    <section class="question">
+        <section class="text">
+            An Azure Web App named "acme" has been created. You create a new "staging" deployment slot.<br>
+            What is the domain name Azure automatically provisions for the "staging" deployment slot?
+        </section>
+        <section class="answer">acme.azurewebsites.net</section>
+        <section class="answer" data-correct>acme-staging.azurewebsites.net</section>
+        <section class="answer">staging.acme.azurewebsites.net</section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Which Azure PowerShell cmdlet is used to swap deployment slots?
+        </section>
+        <section class="answer">Switch-AzureWebAppSlot</section>
+        <section class="answer" data-correct>Switch-AzureWebsiteSlot</section>
+        <section class="answer">Swap-AzureWebAppSlot</section>
+        <section class="answer">Swap-AzureWebsiteSlot</section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What methods are supported for publishing an Azure Web App?
+        </section>
+        <section class="answer">Visual Studio</section>
+        <section class="answer">Git</section>
+        <section class="answer">Web Deploy</section>
+        <section class="answer">PowerShell</section>
+        <section class="answer">FTP</section>
+        <section class="answer">Continuous delivery from Source Control</section>
+        <section class="answer" data-correct>All of the above</section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Which Azure PowerShell cmdlet is used to publish a Web App?
+        </section>
+        <section class="answer">Publish-AzureWebApp</section>
+        <section class="answer">Publish-AzureWebsite</section>
+        <section class="answer">Publish-AzureWebAppProject</section>
+        <section class="answer" data-correct>Publish-AzureWebsiteProject</section>
+    </section>
+    <section class="question">
+        <section class="text">
+            Which Azure PowerShell cmdlet is used to publish a WebJob?
+        </section>
+        <section class="answer">New-AzureWebJob</section>
+        <section class="answer">New-AzureWebAppJob</section>
+        <section class="answer" data-correct>New-AzureWebsiteJob</section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What are the options for scheduling a WebJob?
+        </section>
+        <section class="answer" data-correct>Scheduled</section>
+        <section class="answer">Automatic</section>
+        <section class="answer" data-correct>On-Demand</section>
+        <section class="answer" data-correct>Continuousy Running</section>
+        <section class="answer">All of the above</section>
+    </section>
+    <section class="question">
+        <section class="text">
+            What file types are supported to run as a WebJob?
+        </section>
+        <section class="answer" data-correct>.exe</section>
+        <section class="answer" data-correct>.cmd</section>
+        <section class="answer" data-correct>.bat</section>
+        <section class="answer" data-correct>.ps1 (PowerShell)</section>
+        <section class="answer">.cs (.NET)</section>
+        <section class="answer">.vb (.NET)</section>
+        <section class="answer" data-correct>.js (Node)</section>
+        <section class="answer" data-correct>.py (Python)</section>
+        <section class="answer">.rb (Ruby)</section>
+    </section>
 </section>
